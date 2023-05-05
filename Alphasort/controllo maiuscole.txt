@@ -1,0 +1,39 @@
+/*
+	rimuovo le maiuscole
+		creo un array con le posizioni delle maiuscole
+	*/ 
+
+size_t capcounter = 0;
+
+	for (size_t i = 0; s[i] != 0; i++) {
+		if (s[i] > 64 && s[i] < 91) {
+			capcounter++;
+		}
+	}
+	if (capcounter == 0) {
+		goto elementcounter;
+	}
+
+	size_t* captmp = malloc(capcounter * sizeof(size_t));
+
+	size_t ic = 0;
+	for (size_t i = 0; s[i] != 0; i++) {
+		if (s[i] > 64 && s[i] < 91) {
+			captmp[ic] = i;
+			s[i] += 32;
+			ic++;
+		}
+	}
+
+elementcounter:
+
+
+
+
+
+
+
+if (capcounter != 0) {
+			caprestore(s, captmp, capcounter);
+			free(captmp);
+		}
